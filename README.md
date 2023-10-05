@@ -21,6 +21,7 @@ extensiones utilizadas para mejorar la experiencia de codificacion
 ### Comandos basicos para utilizar git
 
 ` git init `
+
 ` git add . `
 
 ` git commit -m "Mensaje descriptivo de los cambios realizados" `
