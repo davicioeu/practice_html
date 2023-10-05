@@ -16,12 +16,8 @@ extensiones utilizadas para mejorar la experiencia de codificacion
 
 
 
-- [x] conceptos basicos html&css
-- [x] tipos de etiquetas html
 
-
-
-### Comandos basicos para utilizar git
+### Comandos basicos de git
 
 ` git init `
 
@@ -32,4 +28,25 @@ extensiones utilizadas para mejorar la experiencia de codificacion
 
 ` git push origin master `
 
+
+### navegadores soportados
+ 1. Edge  apartir de v112
+ 2. Chrome apartir de v112
+ 3. Firefox apartir de v117
+
+
+**nota** sea utilizado css nesting nativo
+mas informacion en [css nesting](https://drafts.csswg.org/css-nesting-1/)
+
+
+```scss
+div.parent {
+  /* properties */
+  & div.child {
+    /* properties */
+  }
+}
+
+
+```
 
