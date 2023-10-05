@@ -1,6 +1,9 @@
 # Practica de codigo html
 
 
+visualizacion de las practicas atravez de este enlace [https://davicioeu.github.io/practice_html/](https://davicioeu.github.io/practice_html/)
+
+
 ### Editor Visual Studio Code
 
 extensiones utilizadas para mejorar la experiencia de codificacion
