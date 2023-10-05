@@ -14,14 +14,18 @@ extensiones utilizadas para mejorar la experiencia de codificacion
 
 
 - [x] conceptos basicos html&css
-- [x] modelacion de caja
-- [ ] tipos de etiquetas html
+- [x] tipos de etiquetas html
 
 
 
 ### Comandos basicos para utilizar git
 
 ` git init `
+` git add . `
 
+` git commit -m "Mensaje descriptivo de los cambios realizados" `
+
+
+` git push origin master `
 
 
