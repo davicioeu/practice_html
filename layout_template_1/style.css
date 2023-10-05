@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  height: 100vh;
+  background-color: rgb(221, 223, 223);
+  margin: 0 auto;
+
+}
+
+/* ------------ definition grid ----------------*/
+
+.main {
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "sidebar-left main-content sidebar-right "
+    "footer footer footer";
+
+  grid-template-columns: 20% 1fr 20%;
+  grid-template-rows: 200px 1fr 200px;
+
+}
+
+.main > div  {
+  border: 1px solid #c0c0c0;
+}
+
+
+.main  {
+  height: inherit;
+}
+
+.main .header {
+  grid-area: header;
+}
+
+.main .sidebar-left {
+  grid-area: sidebar-left;
+}
+
+.main .sidebar-right {
+  grid-area: sidebar-right;
+}
+
+.main .main-content {
+  grid-area: main-content;
+}
+
+.main .footer {
+  grid-area: footer;
+}
+
+/* ------------ definition grid ----------------*/
+
+
+
+
+/* ------------ definition HEADER ----------------*/
+
+.header {
+  display: flex;
+  align-items: end;
+}
+
+/* ------------ definition HEADER ----------------*/
+
+
+/* ------------ definition menu ----------------*/
+
+#menu {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  width: 100%;
+}
+
+#menu li {
+
+}
+
+#menu li a {
+  display: block;
+  text-decoration: none;
+  padding: 0px 5px 0 0;
+  margin-right: 5px; 
+  border-right: 1px solid #000;
+
+  color: blue;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#menu li:last-child a {
+  border-right: 0;
+}
+
+
+
+
+/* ------------ definition menu ----------------*/
+
+
+
+/* ------------ definition sidebar-left ----------------*/
+
+.sidebar_title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.sidebar-left #navigation {
+
+  list-style: none;
+
+}
+
+#navigation {
+  background-color: #eee;
+}
+
+#navigation li a {
+  text-decoration: none;
+  border: 1px solid #a7a7a7;
+  border-bottom: none;
+  display: block;
+  padding: 4px 6px;
+
+}
+
+#navigation li:last-child a {
+  border-bottom: 1px solid #a7a7a7;
+}
+
+
+
+
+/* ------------ definition sidebar-left ----------------*/

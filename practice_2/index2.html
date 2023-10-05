@@ -1,0 +1,36 @@
+<!-- From: https://gist.githubusercontent.com/sorvell/48f4b7be35c8748e8f6db5c66d36ee29/raw/67346e4e8bc4c81d5a7968d18f0a6a8bc00d792e/index.html -->
+<!doctype html>
+<html>
+<head>
+  <!-- Polyfills only needed for Firefox and Edge. -->
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-loader.js"></script>
+</head>
+<body>
+  <!-- Works only on browsers that support Javascript modules like
+       Chrome, Safari, Firefox 60, Edge 17 -->
+  <script type="module">
+    import MyElement from './main.js';
+    import ElementInner from './element.js';
+    customElements.define('my-element', MyElement);
+    customElements.define('element-inner', ElementInner);
+
+  </script>
+  
+  
+  <my-element mood="hello">
+    <div id="aea" slot="inner">
+      este contenido va ir dentro del slot="inner"
+      
+      <form action="">
+        <input type="text" name="cadena">
+      </form>
+
+      <element-inner content="propiedad contenido">
+        <div slot="elementInner">contenido mas para mostrarse</div>
+      </element-inner>
+
+    </div>
+  </my-element>
+  
+</body>
+</html>

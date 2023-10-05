@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8" />
+  <title>JavaScript Demo for JQuery Terminal Emulator</title>
+  <link rel="shortcut icon" href="favicon.ico" />
+  <script
+    src="https://cdn.jsdelivr.net/combine/npm/jquery,npm/jquery.terminal/js/jquery.terminal.min.js,npm/jquery.terminal/js/xml_formatting.js,npm/js-polyfills/keyboard.js,npm/prismjs/prism.min.js,npm/jquery.terminal/js/prism.js,npm/jquery.splitter/js/jquery.splitter.min.js"></script>
+  <link
+    href="https://cdn.jsdelivr.net/combine/npm/terminal-prism/css/prism-coy.css,npm/jquery.terminal/css/jquery.terminal.min.css,npm/jquery.splitter/css/jquery.splitter.css"
+    rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content" />
+</head>
+
+<body>
+  <script>
+
+    jQuery(function ($) {
+      $('html').terminal(function (cmd, term) {
+        if (cmd == 'help') {
+          term.echo("available commands are mysql, js, test");
+        } else if (cmd == 'test') {
+         
+          term.push(function (cmd, term) {
+            if (cmd == 'help') {
+              term.echo('type "ping" it will display "pong"');
+            } else if (cmd == 'ping') {
+              term.echo('pong');
+            } else {
+              term.echo('unknown command "' + cmd + '"');
+            }
+          }, {
+            prompt: 'test> ',
+            name: 'test'
+          });
+
+        } else if (cmd == "js") {
+          term.push(function (command, term) {
+            var result = window.eval(command);
+            if (result != undefined) {
+              term.echo(String(result));
+            }
+          }, {
+            name: 'js',
+            prompt: 'js> '
+          });
+        } else if (cmd == 'mysql') {
+          term.push(function (command, term) {
+            term.pause();
+            //$.jrpc is helper function which
+            //creates json-rpc request
+            $.jrpc("mysql-rpc-demo.php",
+              "query",
+              [command],
+              function (data) {
+                term.resume();
+                if (data.error) {
+                  if (data.error.error && data.error.error.message) {
+                    term.error(data.error.error.message); // php error
+                  } else {
+                    term.error(data.error.message); // json rpc error
+                  }
+                } else {
+                  if (typeof data.result == 'boolean') {
+                    term.echo(data.result ?
+                      'success' :
+                      'fail');
+                  } else {
+                    var len = data.result.length;
+                    for (var i = 0; i < len; ++i) {
+                      term.echo(data.result[i].join(' | '));
+                    }
+                  }
+                }
+              },
+              function (xhr, status, error) {
+                term.error('[AJAX] ' + status +
+                  ' - Server reponse is: \n' +
+                  xhr.responseText);
+                term.resume();
+              }); // rpc call
+          }, {
+            greetings: "This is example of using mysql" +
+              " from terminal\n you are allowed to exe" +
+              "cute: select, insert, update and delete" +
+              " from/to table:\n   table test(integer_" +
+              "value integer, varchar_value varchar(255))",
+            prompt: "mysql> "
+          });
+        } else {
+          term.echo("unknow command " + command);
+        }
+      }, {
+        greetings: "multiple terminals demo use help" +
+          " to see available commands"
+      });
+    });
+
+
+  </script>
+
+  <!-- End Open Web Analytics Code -->
+</body>
+
+</html>

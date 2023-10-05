@@ -1,0 +1,122 @@
+@import url("https://use.typekit.net/mlu3ggy.css");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: all ease-in-out 200ms;
+}
+
+html {
+  background-color: #ddd;
+}
+
+body {
+  color: #727272;
+  font-size: 16px;
+  
+}
+
+body,
+input, button {
+  font-family: source-sans-pro, sans-serif;
+}
+
+
+
+div.container {
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main .logo img {
+  width: 200px;
+}
+
+.groupform {
+  width: 350px;
+  background-color: #ececec;
+  border: 1px solid #c9c9c9;
+  border-radius: 6px;
+  padding: 30px;
+  box-shadow: 0 0 20px 1px #d1d1d1b6;
+}
+
+.groupform:hover {
+  background-color: #ffffff;
+}
+
+.groupform>div {
+  width: 100%;
+}
+
+.groupform .block-field {
+  margin: 0 0 15px;
+}
+
+.groupform .label {
+  font-weight: 400;
+}
+
+
+.block-field.inline {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  align-items: flex-start;
+}
+
+.block-field.submited {
+  margin-top: 25px;
+}
+
+
+.block-field input[type="text"],
+.block-field input[type="password"]
+ {
+  margin: 2px 0 0;
+  outline: none;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  color: #333333;
+  padding: 8px 10px;
+  box-shadow: inset 0 0 5px 0px rgba(87, 87, 87, 0.178);
+  width: 100%;
+  font-size: inherit;
+}
+
+
+.block-field input:focus {
+  box-shadow: 0 0 2px 3px #3984bc40;
+
+}
+
+.block-field button:focus {
+  box-shadow: 0 0 2px 3px #016ad775;
+  background-color: #1842af;
+  color: #9cc8ff;
+}
+
+
+.block-field input::placeholder {
+  color: #b3b3b3;
+  font-size: 15px;
+}
+
+.block-field button {
+  cursor: pointer;
+  padding: 8px;
+  background: #3366d6;
+  color: #f8f8f8;
+  width: 100%;
+  border: 1px solid #1559d8;
+  border-radius: 3px;
+  font-size: 16px;
+}

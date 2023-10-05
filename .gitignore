@@ -1,0 +1,5 @@
+# Ignorar archivos generados automáticamente
+
+# Ignorar directorios generados automáticamente
+node_modules/
+dist/
