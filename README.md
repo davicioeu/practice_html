@@ -43,6 +43,12 @@ div.parent {
   & div.child {
     /* properties */
   }
+
+  /* media */
+  @media (min-width > 1024px) {
+    max-inline-size: 1024px;
+  }
+
 }
 
 

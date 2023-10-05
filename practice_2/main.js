@@ -11,9 +11,6 @@ class MyElement extends LitElement {
     this.show = false
   }
 
-  
-
-
   static get properties() {
     return {
       mood: {type: String},
@@ -50,8 +47,6 @@ class MyElement extends LitElement {
         <div>
           <slot name="inner"></slot>
         </div>
-
-
       </div>
 
 
