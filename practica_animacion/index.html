@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animacion</title>
+
+
+  <link rel="stylesheet" href="./style.css">
+
+
+  <script>
+
+    window.onload = function() {
+      console.log("mensaje")
+
+    const btn = document.querySelector(".caja2 #daleclick")
+    let expand = false
+    
+    btn.addEventListener("click", (e) => {
+      //console.log(e.target)
+      //const ae = HTMLButtonElement(e.target);
+      //e.target.closest(".caja2").classList.toggle("efect1")
+
+      if(expand == false) {
+        e.target.closest(".caja2").classList.add("efect1")
+        expand = true
+      } else {
+        e.target.closest(".caja2").classList.remove("efect1")
+        expand = false
+      }
+      
+
+    })
+
+    }
+
+  </script>
+
+</head>
+<body>
+
+
+
+  <div class="container">
+
+
+    <div class="caja">
+
+    </div>
+
+
+    <div class="caja2">
+      <button id="daleclick">Dale Click</button>
+    </div>
+
+
+
+    <div class="caja3">
+
+      <button id="btntrans">transformar</button>
+
+      <div id="transformar">
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+  
+</body>
+</html>

@@ -22,7 +22,7 @@ body {
   display: grid;
   grid-template-areas: 
     "header header header"
-    "sidebar-left main-content sidebar-right "
+    "sidebar-left main-content sidebar-right"
     "footer footer footer";
 
   grid-template-columns: 20% 1fr 20%;

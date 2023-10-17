@@ -1,8 +1,40 @@
 /* -------------- BASE -------------------- */
 
+
+@import "./grouplayer.css";
+
+
+@layer estilos-basicos, estilos-basicos2;
+
+
+
+
 :root {
   --container-width: 1000px;
 }
+
+
+
+@layer estilos-basicos2 {
+
+  .item {
+    .example {
+      color: rgba(19, 4, 221, 0.603);
+    }
+  }
+
+}
+
+@layer estilos-basicos {
+
+  .item {
+    .example {
+      color: rgb(211, 66, 22);
+    }
+  }
+
+}
+
 
 * {
   margin: 0;
@@ -32,9 +64,6 @@
 
 
 
-body {
-  background: #eee;
-}
 
 .container {
   max-width: var(--container-width);
@@ -43,6 +72,8 @@ body {
   background: #d6d6d6;
   
 }
+
+
 
 
 /* -------------------------------------------- */
